@@ -1,0 +1,169 @@
+{
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/composer": "^2.0",
+        "composer/installers": "^1.9",
+        "drupal/admin_toolbar": "^3.0",
+        "drupal/coder": "^8.3",
+        "drupal/core-composer-scaffold": "^9.1",
+        "drupal/core-project-message": "^9.1",
+        "drupal/core-recommended": "^9.1",
+        "drupal/devel": "^4.1",
+        "drush/drush": "^10.4",
+        "kint-php/kint": "^3.3",
+        "kint-php/kint-js": "^2.0",
+        "kint-php/kint-twig": "^3.0"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+        "squizlabs/php_codesniffer": "^3.5",
+        "weitzman/drupal-test-traits": "^1.5"
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/CommandEvents.php",
+            "scripts/composer/InstallerEvents.php",
+            "scripts/composer/PackageEvents.php",
+            "scripts/composer/PluginEvents.php"
+        ]
+    },
+    "scripts": {
+        "command": [
+            "DrupalCampFlorida2021\\Composer\\PluginEvents::commandExecution"
+        ],
+        "pre-operations-exec":[
+            "DrupalCampFlorida2021\\Composer\\InstallerEvents::preOpsExecution"
+        ],
+        "pre-dependencies-solving": [
+            "DrupalCampFlorida2021\\Composer\\InstallerEvents::preDependenciesSolving"
+        ],
+        "pre-package-install": [
+            "DrupalCampFlorida2021\\Composer\\PackageEvents::prePackageInstall"
+        ],
+        "post-install-cmd": [
+            "DrupalCampFlorida2021\\Composer\\CommandEvents::refreshSettingsPhp"
+        ],
+        "find-code-violations": [
+            "vendor/bin/phpcs ."
+        ],
+        "fix-code-violations": [
+            "vendor/bin/phpcbf ."
+        ],
+        "shell-script": [
+            "scripts/shell/fldc2021.sh"
+        ],
+        "php-script": [
+            "@php scripts/php/fldc2021.php"
+        ],
+        "get-php-version": [
+            "@php --version"
+        ],
+        "build-backend": [
+            "drush cr",
+            "@composer install",
+            "drush updb -y",
+            "drush cim -y"
+        ],
+        "test-backend": [
+            "vendor/bin/phpunit web/modules/custom/fldc2021/tests/src/ExistingSite/JustAnotherTest.php"
+        ],
+        "build-frontend": [
+            "cd web/themes/custom/fldc2021_ui && npm install"
+        ],
+        "deploy-and-test": [
+            "@build-backend",
+            "@test-backend",
+            "@build-frontend"
+        ]
+    },
+    "scripts-descriptions": {
+        "find-code-violations": "Runs phpcs to find the code violations.",
+        "fix-code-violations": "Runs phpcbf to fix the code violations.",
+        "shell-script": "Executes our custom shell script for the day",
+        "php-script": "Executes our custom php script for the day",
+        "get-php-version": "Executes 'php --version' command via composer.",
+        "build-backend": "Helps in building the backend.",
+        "test-backend": "Helps in executing automation tests of custom directories.",
+        "build-frontend": "Helps in building the frontend.",
+        "deploy-and-test": "This command does deployment and executes automation tests."
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        },
+        "drupal-core-project-message": {
+            "include-keys": [
+                "homepage",
+                "support"
+            ],
+            "post-create-project-cmd-message": [
+                "<bg=blue;fg=white>                                                         </>",
+                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
+                "<bg=blue;fg=white>                                                         </>",
+                "",
+                "<bg=yellow;fg=black>Next steps</>:",
+                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+                "  * Get support: https://www.drupal.org/support",
+                "  * Get involved with the Drupal community:",
+                "      https://www.drupal.org/getting-involved",
+                "  * Remove the plugin that prints this message:",
+                "      composer remove drupal/core-project-message"
+            ]
+        }
+    }
+}

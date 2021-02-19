@@ -1,0 +1,15 @@
+{
+  "name": "fldc2021_ui",
+  "version": "1.0.0",
+  "description": "Just another package.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "Kunal Kursija <kunal_k66@yahoo.com> (https://www.drupal.org/u/kunalkursija)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

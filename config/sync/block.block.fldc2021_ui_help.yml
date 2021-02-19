@@ -1,0 +1,22 @@
+uuid: 0a5eb875-9fa7-4561-acaa-14b83b6aafb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - fldc2021_ui
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: fldc2021_ui_help
+theme: fldc2021_ui
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

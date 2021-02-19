@@ -1,0 +1,22 @@
+uuid: ea9568dd-5f48-43b2-b69a-d43cca9cf674
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - fldc2021_ui
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: fldc2021_ui_content
+theme: fldc2021_ui
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

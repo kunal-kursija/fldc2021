@@ -1,0 +1,6 @@
+name: 'FLDC2021 UI'
+type: theme
+description: 'The face of the session composer-scripting'
+base theme: stable
+core_version_requirement: ^8.8 || ^9
+engine: twig

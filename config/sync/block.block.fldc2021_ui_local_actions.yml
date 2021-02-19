@@ -1,0 +1,20 @@
+uuid: 92bf7e5e-4643-42b2-a1cc-67c5f42d2f11
+langcode: en
+status: true
+dependencies:
+  theme:
+    - fldc2021_ui
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: fldc2021_ui_local_actions
+theme: fldc2021_ui
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

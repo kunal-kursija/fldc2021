@@ -1,0 +1,20 @@
+uuid: 0965ae11-72c5-4cb1-83c9-a10f46d81067
+langcode: en
+status: true
+dependencies:
+  theme:
+    - fldc2021_ui
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: fldc2021_ui_page_title
+theme: fldc2021_ui
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }
