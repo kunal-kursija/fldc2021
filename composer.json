@@ -42,20 +42,17 @@
         ]
     },
     "scripts": {
-        "command": [
-            "DrupalCampFlorida2021\\Composer\\PluginEvents::commandExecution"
+        "post-install-cmd": [
+            "DrupalCampFlorida2021\\Composer\\CommandEvents::refreshSettingsPhp"
         ],
         "pre-operations-exec":[
             "DrupalCampFlorida2021\\Composer\\InstallerEvents::preOpsExecution"
         ],
-        "pre-dependencies-solving": [
-            "DrupalCampFlorida2021\\Composer\\InstallerEvents::preDependenciesSolving"
-        ],
         "pre-package-install": [
             "DrupalCampFlorida2021\\Composer\\PackageEvents::prePackageInstall"
         ],
-        "post-install-cmd": [
-            "DrupalCampFlorida2021\\Composer\\CommandEvents::refreshSettingsPhp"
+        "command": [
+            "DrupalCampFlorida2021\\Composer\\PluginEvents::commandExecution"
         ],
         "find-code-violations": [
             "vendor/bin/phpcs ."

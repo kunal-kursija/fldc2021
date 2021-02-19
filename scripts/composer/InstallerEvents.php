@@ -15,7 +15,7 @@ class InstallerEvents {
    * @param \Composer\Installer\InstallerEvent $event
    *   Instance provided by composer event dispatcher.
    */
-  public static function preDependenciesSolving(InstallerEvent $event) {
+  public static function preOpsExecution(InstallerEvent $event) {
     $event->getIO()->write('--------- Event ' . $event->getName() . ' has been fired ---------');
   }
 
