@@ -88,15 +88,15 @@
         ]
     },
     "scripts-descriptions": {
-        "find-code-violations": "Runs phpcs to find the code violations.",
-        "fix-code-violations": "Runs phpcbf to fix the code violations.",
-        "shell-script": "Executes our custom shell script for the day",
-        "php-script": "Executes our custom php script for the day",
-        "get-php-version": "Executes 'php --version' command via composer.",
-        "build-backend": "Helps in building the backend.",
-        "test-backend": "Helps in executing automation tests of custom directories.",
-        "build-frontend": "Helps in building the frontend.",
-        "deploy-and-test": "This command does deployment and executes automation tests."
+        "find-code-violations": "FLDC2021: Runs phpcs to find the code violations.",
+        "fix-code-violations": "FLDC2021: Runs phpcbf to fix the code violations.",
+        "shell-script": "FLDC2021: Executes our custom shell script for the day",
+        "php-script": "FLDC2021: Executes our custom php script for the day",
+        "get-php-version": "FLDC2021: Executes 'php --version' command via composer.",
+        "build-backend": "FLDC2021: Helps in building the backend.",
+        "test-backend": "FLDC2021: Helps in executing automation tests of custom directories.",
+        "build-frontend": "FLDC2021: Helps in building the frontend.",
+        "deploy-and-test": "FLDC2021: This command does deployment and executes automation tests."
     },
     "conflict": {
         "drupal/drupal": "*"

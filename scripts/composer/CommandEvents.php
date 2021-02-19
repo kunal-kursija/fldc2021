@@ -18,7 +18,7 @@ class CommandEvents {
    *   Instance passed as argument by composer event dispatcher.
    */
   public static function refreshSettingsPhp(Event $event) {
-    $event->getIO()->write('--------- Event ' . $event->getName() . ' has been fired ---------');
+    $event->getIO()->write('--------- Event ' . strtoupper($event->getName()) . ' has been fired ---------');
 
     $fs = new Filesystem();
     $drupalFinder = new DrupalFinder();

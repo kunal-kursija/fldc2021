@@ -16,7 +16,7 @@ class PackageEvents {
    *   Instance provided as argument by composer event dispatcher
    */
   public static function prePackageInstall(PackageEvent $event) {
-    $event->getIO()->write('--------- Event ' . $event->getName() . ' has been fired ---------');
+    $event->getIO()->write('--------- Event ' . strtoupper($event->getName()) . ' has been fired ---------');
   }
 
 }

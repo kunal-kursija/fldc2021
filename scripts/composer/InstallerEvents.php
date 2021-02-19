@@ -16,7 +16,7 @@ class InstallerEvents {
    *   Instance provided by composer event dispatcher.
    */
   public static function preOpsExecution(InstallerEvent $event) {
-    $event->getIO()->write('--------- Event ' . $event->getName() . ' has been fired ---------');
+    $event->getIO()->write('--------- Event ' . strtoupper($event->getName()) . ' has been fired ---------');
   }
 
 }

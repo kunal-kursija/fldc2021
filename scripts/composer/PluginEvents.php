@@ -16,7 +16,7 @@ class PluginEvents {
    *   Instance provided as argument by composer event dispatcher
    */
   public static function commandExecution(CommandEvent $event) {
-    $event->getOutput()->writeln('--------- Event ' . $event->getName() . ' has been fired ---------');
+    $event->getOutput()->writeln('--------- Event ' . strtoupper($event->getName()) . ' has been fired ---------');
   }
 
 }
