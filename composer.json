@@ -17,12 +17,10 @@
     "require": {
         "composer/composer": "^2.0",
         "composer/installers": "^1.9",
-        "drupal/admin_toolbar": "^3.0",
         "drupal/coder": "^8.3",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
-        "drupal/devel": "^4.1",
         "drush/drush": "^10.4",
         "kint-php/kint": "^3.3",
         "kint-php/kint-js": "^2.0",
